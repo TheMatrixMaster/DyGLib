@@ -1,7 +1,7 @@
 import numpy as np
 from collections import defaultdict
 
-from utils.DataLoader import Data
+from dyglib.utils.DataLoader import Data
 
 
 def predict_link_probabilities(edge_memories: set, edges_tuple: tuple):

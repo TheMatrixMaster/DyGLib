@@ -113,3 +113,7 @@ DG_data/*/*
 !DG_data/myket/*
 processed_data/*/*
 !processed_data/myket/*
+
+*.zip
+logs/
+saved_models/

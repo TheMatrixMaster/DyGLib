@@ -2,8 +2,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
-from utils.utils import NeighborSampler
+from dyglib.models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
+from dyglib.utils.utils import NeighborSampler
 
 
 class TGAT(nn.Module):

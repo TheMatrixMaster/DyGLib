@@ -2,8 +2,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.modules import TimeEncoder, TransformerEncoder
-from utils.utils import NeighborSampler
+from dyglib.models.modules import TimeEncoder, TransformerEncoder
+from dyglib.utils.utils import NeighborSampler
 
 
 class TCL(nn.Module):

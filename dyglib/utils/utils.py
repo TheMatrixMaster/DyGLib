@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-from utils.DataLoader import Data
+from dyglib.utils.DataLoader import Data
 
 
 def set_random_seed(seed: int = 0):
