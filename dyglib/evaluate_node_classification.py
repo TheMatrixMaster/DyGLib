@@ -105,8 +105,10 @@ if __name__ == "__main__":
                                          max_input_sequence_length=args.max_input_sequence_length, device=args.device)
         else:
             raise ValueError(f"Wrong value for model_name {args.model_name}!")
+        
         node_classifier = MLPClassifier(input_dim=node_raw_features.shape[1], dropout=args.dropout)
         model = nn.Sequential(dynamic_backbone, node_classifier)
+        
         logger.info(f'model -> {model}')
         logger.info(f'model name: {args.model_name}, #parameters: {get_parameter_sizes(model) * 4} B, '
                     f'{get_parameter_sizes(model) * 4 / 1024} KB, {get_parameter_sizes(model) * 4 / 1024 / 1024} MB.')

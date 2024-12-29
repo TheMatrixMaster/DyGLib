@@ -53,8 +53,8 @@ if __name__ == "__main__":
 
         args.seed = run
         args.load_model_name = f'{args.model_name}_seed{args.seed}'
-        args.save_model_name = f'node_classification_{args.model_name}_seed{args.seed}'
-
+        args.save_model_name = f'from_dlp_node_classification_{args.model_name}_seed{args.seed}'
+        
         # set up logger
         logging.basicConfig(level=logging.INFO)
         logger = logging.getLogger()
@@ -127,7 +127,8 @@ if __name__ == "__main__":
                     f'{get_parameter_sizes(model) * 4 / 1024} KB, {get_parameter_sizes(model) * 4 / 1024 / 1024} MB.')
 
         # follow previous work, we freeze the dynamic_backbone and only optimize the node_classifier
-        optimizer = create_optimizer(model=model[1], optimizer_name=args.optimizer, learning_rate=args.learning_rate, weight_decay=args.weight_decay)
+        # optimizer = create_optimizer(model=model[1], optimizer_name=args.optimizer, learning_rate=args.learning_rate, weight_decay=args.weight_decay)
+        optimizer = create_optimizer(model=model, optimizer_name=args.optimizer, learning_rate=args.learning_rate, weight_decay=args.weight_decay)
 
         model = convert_to_gpu(model, device=args.device)
         # put the node raw messages of memory-based models on device
